@@ -12,8 +12,18 @@ def sum_numbers_from_file():
     ######################
     # Add your code here #
     ######################
-    print('In the sum_numbers_from_file function')
+    with open("numbers.txt",'r') as number_file:
+        total = 0
+        for line in number_file:
+            try:
+                number = int(line.strip())
+                total += number
 
+            except Valueerror:
+                print('invalid value')
+        print(total)
+    print('In the sum_numbers_from_file function')
+#ethan collins 3/25/2025
 # You don't need to change anything below this line:
 if __name__ == '__main__':
     sum_numbers_from_file()
